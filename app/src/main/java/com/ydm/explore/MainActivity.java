@@ -28,11 +28,14 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.tv_picture_wall})
+    @OnClick({R.id.tv_picture_wall, R.id.tv_book})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_picture_wall:
                 PictureWallActivity.launch(mContext);
+                break;
+            case R.id.tv_book:
+                BookOpenModeActivity.launch(mContext);
                 break;
         }
     }

@@ -27,6 +27,10 @@
 
         <activity android:name=".PictureWallActivity"
             android:screenOrientation="portrait"/>
+        <activity android:name=".BookOpenModeActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".OpenBookActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

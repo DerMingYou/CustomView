@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">照片墙</string>
     <string name="picture_wall">照片墙</string>
+    <string name="book_list">书   单</string>
 </resources>
