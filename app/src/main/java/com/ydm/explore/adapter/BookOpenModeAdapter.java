@@ -64,6 +64,8 @@ public class BookOpenModeAdapter extends BaseRecyclerViewAdapter<BookOpenModeAda
         ViewHolder(View itemView, BookOpenModeAdapter adapter) {
             super(itemView);
             ButterKnife.bind(this, itemView);
+
+            itemView.setOnClickListener(v -> adapter.onItemHolderClick(ViewHolder.this));
         }
     }
 }

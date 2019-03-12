@@ -10,7 +10,7 @@
         android:textColor="#666666"
         android:layout_margin="30dp"
         android:gravity="center"
-        android:text="空的呀"
+        android:text="小姐姐不在"
         android:background="@drawable/shape_border_key_orange_stroke"
         android:textSize="16sp"
         android:padding="15dp"/>

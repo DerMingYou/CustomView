@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.DecelerateInterpolator;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
@@ -22,7 +22,6 @@ import com.ydm.explore.base.BaseActivity;
 import com.ydm.explore.bean.OpenBookBean;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -66,6 +65,9 @@ public class BookOpenModeActivity extends BaseActivity implements Animation.Anim
 
     @Override
     public void initView(Bundle savedInstanceState, View contentView) {
+
+        mContent = findViewById(R.id.img_content);
+        mFirst = findViewById(R.id.img_first);
         // 获取状态栏高度
         statusHeight = -1;
         //获取status_bar_height资源的ID
@@ -79,39 +81,42 @@ public class BookOpenModeActivity extends BaseActivity implements Animation.Anim
         bookOpenModeAdapter = new BookOpenModeAdapter(contentList, mContext);
         rvBook.setAdapter(bookOpenModeAdapter);
 
-        bookOpenModeAdapter.setOnItemClickListener((parent, view, position, id) -> {
-            mFirst.setVisibility(View.VISIBLE);
-            mContent.setVisibility(View.VISIBLE);
+        bookOpenModeAdapter.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mFirst.setVisibility(View.VISIBLE);
+                mContent.setVisibility(View.VISIBLE);
 
-            // 计算当前的位置坐标
-            view.getLocationInWindow(location);
-            int width = view.getWidth();
-            int height = view.getHeight();
+                // 计算当前的位置坐标
+                view.getLocationInWindow(location);
+                int width = view.getWidth();
+                int height = view.getHeight();
 
-            // 两个ImageView设置大小和位置
-            RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mFirst.getLayoutParams();
-            params.leftMargin = location[0];
-            params.topMargin = location[1] - statusHeight;
-            params.width = width;
-            params.height = height;
-            mFirst.setLayoutParams(params);
-            mContent.setLayoutParams(params);
+                // 两个ImageView设置大小和位置
+                RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams) mFirst.getLayoutParams();
+                params.leftMargin = location[0];
+                params.topMargin = location[1] - statusHeight;
+                params.width = width;
+                params.height = height;
+                mFirst.setLayoutParams(params);
+                mContent.setLayoutParams(params);
 
-            //mContent = new ImageView(MainActivity.this);
-            Bitmap contentBitmap = Bitmap.createBitmap(width,height, Bitmap.Config.ARGB_8888);
-            contentBitmap.eraseColor(getResources().getColor(R.color.colorPrimary));
-            mContent.setImageBitmap(contentBitmap);
+                //mContent = new ImageView(MainActivity.this);
+                Bitmap contentBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+                contentBitmap.eraseColor(getResources().getColor(R.color.white));
+                mContent.setImageBitmap(contentBitmap);
 
-            // mCover = new ImageView(MainActivity.this);
-            Bitmap coverBitmap = BitmapFactory.decodeResource(getResources(),contentList.get(position).getImage());
-            mFirst.setImageBitmap(coverBitmap);
+                // mCover = new ImageView(MainActivity.this);
+                Bitmap coverBitmap = BitmapFactory.decodeResource(getResources(), contentList.get(position).getImage());
+                mFirst.setImageBitmap(coverBitmap);
 
-            initAnimation(view);
+                initAnimation(view);
 
-            mContent.clearAnimation();
-            mContent.startAnimation(scaleAnimation);
-            mFirst.clearAnimation();
-            mFirst.startAnimation(threeDAnimation);
+                mContent.clearAnimation();
+                mContent.startAnimation(scaleAnimation);
+                mFirst.clearAnimation();
+                mFirst.startAnimation(threeDAnimation);
+            }
         });
     }
 
@@ -120,7 +125,7 @@ public class BookOpenModeActivity extends BaseActivity implements Animation.Anim
         Integer[] images = new Integer[]{R.mipmap.loading_01, R.mipmap.loading_02, R.mipmap.loading_03,
                 R.mipmap.loading_04, R.mipmap.loading_05, R.mipmap.loading_06};
         String[] nameString = new String[]{"三国", "红楼", "西游", "水浒", "论语", "孟子"};
-        for (int i = 0; i < 6; i++){
+        for (int i = 0; i < 6; i++) {
             OpenBookBean bookBean = new OpenBookBean();
             bookBean.setImage(images[i]);
             bookBean.setName(nameString[i]);
@@ -136,7 +141,7 @@ public class BookOpenModeActivity extends BaseActivity implements Animation.Anim
 
     @Override
     public void onAnimationEnd(Animation animation) {
-        if(scaleAnimation.hasEnded() && threeDAnimation.hasEnded()) {
+        if (scaleAnimation.hasEnded() && threeDAnimation.hasEnded()) {
             // 两个动画都结束的时候再处理后续操作
             if (!isOpenBook) {
                 isOpenBook = true;
@@ -185,7 +190,7 @@ public class BookOpenModeActivity extends BaseActivity implements Animation.Anim
     protected void onRestart() {
         super.onRestart();
         // 当界面重新进入的时候进行合书的动画
-        if(isOpenBook) {
+        if (isOpenBook) {
             scaleAnimation.reverse();
             threeDAnimation.reverse();
             mFirst.clearAnimation();
