@@ -1,4 +1,4 @@
-package com.ydm.explore.adapter;
+package com.ydm.explore.view.adapter;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;

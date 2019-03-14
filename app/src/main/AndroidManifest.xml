@@ -17,7 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,11 +25,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".PictureWallActivity"
+        <activity android:name=".activity.PictureWallActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".BookOpenModeActivity"
+        <activity android:name=".activity.BookOpenModeActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".OpenBookActivity"
+        <activity android:name=".activity.OpenBookActivity"
             android:screenOrientation="portrait"/>
     </application>
 

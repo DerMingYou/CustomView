@@ -1,4 +1,4 @@
-package com.ydm.explore.adapter;
+package com.ydm.explore.view.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.ydm.explore.R;
 import com.ydm.explore.base.BaseRecyclerViewAdapter;
-import com.ydm.explore.bean.OpenBookBean;
+import com.ydm.explore.view.bean.OpenBookBean;
 
 import java.util.ArrayList;
 

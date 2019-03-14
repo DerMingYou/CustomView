@@ -1,4 +1,4 @@
-package com.ydm.explore;
+package com.ydm.explore.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,11 +9,11 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.ydm.explore.adapter.PictureWallAdapter;
+import com.ydm.explore.R;
+import com.ydm.explore.view.adapter.PictureWallAdapter;
 import com.ydm.explore.base.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Description: 照片墙
@@ -33,7 +33,7 @@ public class PictureWallActivity extends BaseActivity {
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_picture_wall;
     }
 

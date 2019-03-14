@@ -1,4 +1,4 @@
-package com.ydm.explore;
+package com.ydm.explore.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -15,16 +15,16 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 
-import com.ydm.explore.adapter.BookOpenModeAdapter;
-import com.ydm.explore.animation.ContentScaleAnimation;
-import com.ydm.explore.animation.Rotate3DAnimation;
+import com.ydm.explore.R;
+import com.ydm.explore.view.adapter.BookOpenModeAdapter;
+import com.ydm.explore.widget.animation.ContentScaleAnimation;
+import com.ydm.explore.widget.animation.Rotate3DAnimation;
 import com.ydm.explore.base.BaseActivity;
-import com.ydm.explore.bean.OpenBookBean;
+import com.ydm.explore.view.bean.OpenBookBean;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
  * Description: 掌阅小说打开方式
@@ -59,7 +59,7 @@ public class BookOpenModeActivity extends BaseActivity implements Animation.Anim
     }
 
     @Override
-    protected int getLayoutId() {
+    public int getLayoutId() {
         return R.layout.activity_book_open_mode;
     }
 

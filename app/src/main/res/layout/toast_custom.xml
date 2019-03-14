@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/dp_80"
             android:layout_marginTop="@dimen/dp_30"
-            android:text="撩下小姐姐"
+            android:text="分享成功"
             android:textColor="@color/white"/>
 
         <TextView
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/hint"
             android:layout_marginLeft="@dimen/dp_80"
-            android:text="0983335693"
+            android:text="棒棒的！！！"
             android:layout_marginTop="@dimen/dp_10"
             android:textColor="@color/white"/>
     </LinearLayout>

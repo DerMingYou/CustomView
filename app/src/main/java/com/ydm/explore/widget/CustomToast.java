@@ -36,10 +36,10 @@ public class CustomToast {
             @Override
             public void onViewDetachedFromWindow(View v) {
                 // 去拨号
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                Uri data = Uri.parse("tel:" + phoneNum);
-                intent.setData(data);
-                context.startActivity(intent);
+//                Intent intent = new Intent(Intent.ACTION_DIAL);
+//                Uri data = Uri.parse("tel:" + phoneNum);
+//                intent.setData(data);
+//                context.startActivity(intent);
             }
 
             @Override

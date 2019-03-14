@@ -1,4 +1,4 @@
-package com.ydm.explore.animation;
+package com.ydm.explore.widget.animation;
 
 import android.content.Context;
 import android.graphics.Camera;

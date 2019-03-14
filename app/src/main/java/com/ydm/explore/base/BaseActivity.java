@@ -13,6 +13,9 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+
 import java.util.Locale;
 
 import butterknife.ButterKnife;
@@ -31,7 +34,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     private Unbinder mUnbinder;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    @Subscribe
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
 
@@ -40,6 +44,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         initView(savedInstanceState, mContentView);
 
         initData();
+
+        EventBus.getDefault().register(this);
     }
 
     @SuppressLint("ResourceType")
@@ -49,7 +55,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         mUnbinder = ButterKnife.bind(this);
     }
 
-    protected abstract int getLayoutId();
+    public abstract int getLayoutId();
 
     public abstract void initView(final Bundle savedInstanceState, final View contentView);
 

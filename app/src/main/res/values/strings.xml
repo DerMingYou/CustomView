@@ -2,4 +2,12 @@
     <string name="app_name">照片墙</string>
     <string name="picture_wall">照片墙</string>
     <string name="book_list">书   单</string>
+    <string name="share_to">分享至</string>
+    <string name="wechat">微信</string>
+    <string name="friend_circle">朋友圈</string>
+    <string name="qq_zone">QQ空间</string>
+    <string name="cancel">取消</string>
+    <string name="sorry_no_install_wechat">未安装微信</string>
+    <string name="share_title">分享小标题</string>
+    <string name="share_sub_title">分享副标题</string>
 </resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_gravity="bottom"
+              android:background="@color/bg_main"
+              android:orientation="vertical">
+
+    <LinearLayout
+        style="@style/ll_style_48_bottom"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_share_title"
+            style="@style/font_normal"
+            android:text="@string/share_to"/>
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ll_style_48_bottom"
+        android:gravity="center"
+        android:padding="@dimen/dp_10">
+
+        <TextView
+            android:id="@+id/tv_QQ"
+            style="@style/font_normal"
+            android:drawableTop="@mipmap/icon_qq_share"
+            android:gravity="center_horizontal"
+            android:drawablePadding="@dimen/dp_5"
+            android:layout_weight="1"
+            android:padding="@dimen/dp_5"
+            android:text="QQ"/>
+
+        <TextView
+            android:id="@+id/tv_gone"
+            style="@style/font_normal"
+            android:drawableTop="@mipmap/icon_qqkj"
+            android:gravity="center_horizontal"
+            android:drawablePadding="@dimen/dp_5"
+            android:layout_weight="1"
+            android:padding="@dimen/dp_5"
+            android:text="@string/qq_zone"/>
+
+        <TextView
+            android:id="@+id/tv_weixin"
+            style="@style/font_normal"
+            android:drawableTop="@mipmap/icon_wechat_share"
+            android:gravity="center_horizontal"
+            android:drawablePadding="@dimen/dp_5"
+            android:layout_weight="1"
+            android:padding="@dimen/dp_5"
+            android:text="@string/wechat"/>
+
+
+        <TextView
+            android:id="@+id/tv_pengyou_quan"
+            style="@style/font_normal"
+            android:drawableTop="@mipmap/icon_wxpyq"
+            android:gravity="center_horizontal"
+            android:drawablePadding="@dimen/dp_5"
+            android:layout_weight="1"
+            android:padding="@dimen/dp_5"
+            android:text="@string/friend_circle"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_close"
+        style="@style/ll_style_48_bottom"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center">
+
+        <TextView
+            style="@style/font_normal"
+            android:text="@string/cancel"/>
+    </LinearLayout>
+
+
+</LinearLayout>

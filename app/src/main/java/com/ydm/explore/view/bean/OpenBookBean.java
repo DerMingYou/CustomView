@@ -1,4 +1,4 @@
-package com.ydm.explore.bean;
+package com.ydm.explore.view.bean;
 
 /**
  * Description:
