@@ -7,7 +7,7 @@ package com.ydm.explore;
  */
 public class AppConstants {
     //QQ APPID
-    public static final String QQ_APP_ID = "1106523673";
+    public static final String QQ_APP_ID = "1108220153";
 
     public static final String APP_ID = "wx8214535063b01dee";
 }
