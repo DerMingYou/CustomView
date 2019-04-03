@@ -16,4 +16,8 @@
     <string name="hint_add_group">请输入</string>
     <string name="confirm">确定</string>
     <string name="custom_dialog">弹框</string>
+
+    <string name="search_range_finder">搜索测距仪</string>
+    <string name="not_connected">未连接</string>
+    <string name="not_link_bluetooth_note">点击扫描可用设备</string>
 </resources>
