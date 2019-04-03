@@ -10,4 +10,10 @@
     <string name="sorry_no_install_wechat">未安装微信</string>
     <string name="share_title">分享小标题</string>
     <string name="share_sub_title">分享副标题</string>
+
+    <string name="no_support_emoji_character">不支持输入Emoji表情符号</string>
+    <string name="change_btn_name">修改按钮名称</string>
+    <string name="hint_add_group">请输入</string>
+    <string name="confirm">确定</string>
+    <string name="custom_dialog">弹框</string>
 </resources>

@@ -25,7 +25,7 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.tv_picture_wall, R.id.tv_book})
+    @OnClick({R.id.tv_picture_wall, R.id.tv_book, R.id.tv_custom_view})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_picture_wall:
@@ -33,6 +33,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.tv_book:
                 BookOpenModeActivity.launch(mContext);
+                break;
+            case R.id.tv_custom_view:
+                CustomViewListActivity.launch(mContext);
                 break;
         }
     }
